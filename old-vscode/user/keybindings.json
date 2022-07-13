@@ -101,6 +101,14 @@
     "when": "terminalFocus"
   },
   {
+    "key": "ctrl+shift+`",
+    "command": "-workbench.action.terminal.new"
+  },
+  {
+    "key": "ctrl+alt+`",
+    "command": "workbench.action.terminal.newInActiveWorkspace"
+  },
+  {
     "key": "shift+alt+v",
     "command": "toggleVim"
   },
@@ -335,7 +343,7 @@
     "command": "editor.action.addSelectionToPreviousFindMatch"
   },
   {
-    "key": "ctrl+`",
+    "key": "ctrl+shift+`",
     "command": "workbench.action.toggleMaximizedPanel"
   },
   {
@@ -345,6 +353,10 @@
   {
     "key": "ctrl+shift+delete",
     "command": "deleteAllRight"
+  },
+  {
+    "key": "ctrl+alt+r",
+    "command": "workbench.action.terminal.runSelectedText"
   },
   {
     "key": "shift+alt+u",
@@ -491,52 +503,5 @@
   {
     "key": "ctrl+=",
     "command": "editor.action.showDefinitionPreviewHover"
-  },
-  {
-    "key": "shift+win+a",
-    "command": "extension.vim_cmd+a",
-    "when": "editorTextFocus && vim.active && vim.use<D-a> && !inDebugRepl && vim.mode != 'Insert'"
-  },
-  {
-    "key": "win+a",
-    "command": "-extension.vim_cmd+a",
-    "when": "editorTextFocus && vim.active && vim.use<D-a> && !inDebugRepl && vim.mode != 'Insert'"
-  },
-  {
-    "key": "ctrl+k e",
-    "command": "revealFileInOS",
-    "when": "!editorFocus"
-  },
-  {
-    "key": "shift+alt+r",
-    "command": "-revealFileInOS",
-    "when": "!editorFocus"
-  },
-  {
-    "key": "ctrl+k e",
-    "command": "-workbench.files.action.focusOpenEditorsView",
-    "when": "workbench.explorer.openEditorsView.active"
-  },
-  {
-    "key": "ctrl+alt+u",
-    "command": "workbench.action.terminal.runSelectedText"
-  },
-  {
-    "key": "ctrl+shift+`",
-    "command": "-workbench.action.terminal.new"
-  },
-  {
-    "key": "shift+alt+`",
-    "command": "workbench.action.terminal.newInActiveWorkspace"
-  },
-  {
-    "key": "alt+`",
-    "command": "workbench.action.terminal.toggleTerminal"
-  },
-  {
-    "key": "ctrl+`",
-    "command": "-workbench.action.terminal.toggleTerminal"
-  },
-  // https://github.com/ChristianKohler/NpmIntellisense/issues/12
-  { "key": ".", "command": "" }
+  }
 ]

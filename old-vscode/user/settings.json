@@ -1,5 +1,5 @@
 {
-  // --- VIM ---
+  // VIM
   "vim.camelCaseMotion.enable": true,
   "vim.enableNeovim": true,
   "vim.highlightedyank.enable": true,
@@ -13,7 +13,7 @@
   "vim.timeout": 3000,
   "vim.useSystemClipboard": true,
   "vim.handleKeys": {
-    "<C-f>": true,
+    "<C-f>": false,
     "<C-b>": false,
     "<C-d>": false,
     "<C-u>": false,
@@ -32,13 +32,15 @@
     { "before": ["<leader>", "m"], "commands": ["bookmarks.toggle"] },
     // { "before": ["<leader>", "b"], "commands": ["bookmarks.list"] },
     { "before": ["<leader>", "n"], "commands": [":nohl"] },
-    { "before": ["<leader>", "p"], "after": ["o", "<C-r>", "*", "<Esc>"] },
-    { "before": ["<leader>", "P"], "after": ["O", "<C-r>", "*", "<Esc>"] },
     { "before": ["<Leader>", "t", "t"], "commands": [":tabnew"] },
     { "before": ["<Leader>", "t", "n"], "commands": [":tabnext"] },
     { "before": ["<Leader>", "t", "p"], "commands": [":tabprevious"] },
     { "before": ["<Leader>", "t", "c"], "commands": [":tabclose"] },
     { "before": ["<Leader>", "t", "o"], "commands": [":tabonly"] },
+    {
+      "before": ["<Leader>", "p"],
+      "commands": ["workbench.action.showCommands"]
+    },
     { "before": ["<Leader>", "s"], "commands": ["workbench.action.gotoSymbol"] }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
@@ -61,47 +63,34 @@
     // }
   ],
 
-  // --- Machine dependant ---
-  "editor.fontFamily": "Cascadia Code",
-  "editor.fontLigatures": true,
-  "window.zoomLevel": 0.68,
-  // Chosse shell for tasks, extensions etc
-  // Command Prompt -- "C:\\Windows\\System32\\cmd.exe"
-  // PowerShell -- "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
-  // Git Bash -- "C:\\Program Files\\Git\\bin\\bash.exe"
-  // WSL Ubuntu -- "C:\\Windows\\System32\\bash.exe"
-
-  // "terminal.integrated.automationShell.windows": "C:\\windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
-  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
-  "terminal.integrated.shellArgs.windows": "--login",
-
-  // --- Language specific ---
-  "[bat]": { "editor.fontLigatures": false },
-  "[ahk]": { "editor.fontLigatures": false,"editor.snippetSuggestions": "top" },
+  // Language specific
+  "[ahk]": { "editor.fontLigatures": false },
   "[html]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[json]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[jsonc]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[javascript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
   "[markdown]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[css]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[scss]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[yaml]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[vue]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
-  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" },
 
-  // --- Others ---
+  // Others
   "C_Cpp.clang_format_style": "{BasedOnStyle: LLVM, IndentWidth: 4}",
   "bookmarks.navigateThroughAllFiles": true,
   "bookmarks.saveBookmarksInProject": true,
   "bookmarks.showCommandsInContextMenu": false,
   "bookmarks.useWorkaroundForFormatters": true,
   "code-runner.executorMap": { "html": "chrome -incognito" },
+  "debug.inlineValues": true,
+  "editor.acceptSuggestionOnEnter": "off",
+  "editor.cursorSmoothCaretAnimation": true,
   "editor.cursorSurroundingLines": 5,
+  "editor.find.autoFindInSelection": "multiline",
+  "editor.folding": false,
   "editor.formatOnSave": true,
+  "editor.lineNumbers": "relative",
   "editor.minimap.enabled": false,
   "editor.minimap.showSlider": "always",
   "editor.multiCursorModifier": "alt",
   "editor.renderWhitespace": "selection",
+  "editor.smoothScrolling": true,
   "editor.suggestSelection": "recentlyUsedByPrefix",
   "emmet.triggerExpansionOnTab": true,
   "eslint.alwaysShowStatus": true,
@@ -113,6 +102,7 @@
   "files.eol": "\n",
   "git.autofetch": true,
   "gitlens.keymap": "alternate",
+  "gitlens.mode.active": "zen",
   "gitlens.views.compare.location": "gitlens",
   "gitlens.views.fileHistory.location": "explorer",
   "gitlens.views.lineHistory.location": "explorer",
@@ -120,13 +110,20 @@
   "gitlens.views.search.location": "gitlens",
   "html-css-class-completion.enableEmmetSupport": true,
   "java.codeGeneration.toString.codeStyle": "STRING_FORMAT",
+  "java.completion.overwrite": false,
   "java.configuration.checkProjectSettingsExclusions": false,
+  "java.format.settings.profile": "GoogleStyle",
+  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
+  "java.saveActions.organizeImports": true,
   "liveServer.settings.CustomBrowser": "firefox:PrivateMode",
   "liveServer.settings.donotShowInfoMsg": true,
   "liveServer.settings.useLocalIp": true,
   "liveServer.settings.useWebExt": true,
   "markdown.extension.toc.githubCompatibility": true,
   "phpserver.browser": "firefox",
+  "search.showLineNumbers": true,
+  "search.smartCase": true,
+  "search.useGlobalIgnoreFiles": true,
   "sync.autoUpload": false,
   "sync.forceUpload": true,
   "sync.gist": "06b71456a0f9fd68097b1bec3ec4260f",
@@ -134,11 +131,13 @@
   "sync.removeExtensions": false,
   "terminal.integrated.copyOnSelection": true,
   "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cwd": "${fileDirname}",
   "terminal.integrated.scrollback": 5000,
   "window.customMenuBarAltFocus": true,
   "window.menuBarVisibility": "default",
   "window.newWindowDimensions": "maximized",
   "window.titleBarStyle": "custom",
+  "workbench.colorTheme": "Cobalt2",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.list.keyboardNavigation": "filter",
   "workbench.settings.useSplitJSON": true,
@@ -147,32 +146,18 @@
   "zenMode.hideActivityBar": false,
   "zenMode.hideLineNumbers": false,
   "zenMode.hideStatusBar": false,
-  "editor.smoothScrolling": true,
-  "editor.cursorSmoothCaretAnimation": true,
+
+  // Machine dependant
+  "editor.fontFamily": "'Fira Code', Inconsolata, Consolas, monospace",
+  "editor.fontLigatures": true,
+  "window.zoomLevel": 0.68,
+  // Chosse shell for tasks, extensions etc
+  // "terminal.integrated.automationShell.windows": "C:\\windows\\System32\\cmd.exe",
+  // "terminal.integrated.automationShell.windows": "C:\\windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+  // "terminal.integrated.automationShell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "terminal.integrated.shellArgs.windows": "--login"
+
   // "editor.mouseWheelScrollSensitivity": 8,
   // "editor.scrollBeyondLastLine": false,
-  "java.completion.overwrite": false,
-  "java.saveActions.organizeImports": true,
-  "java.format.settings.url": "https://raw.githubusercontent.com/google/styleguide/gh-pages/eclipse-java-google-style.xml",
-  "java.format.settings.profile": "GoogleStyle",
-  "editor.lineNumbers": "relative",
-  "gitlens.mode.active": "zen",
-  "editor.folding": false,
-  "editor.find.autoFindInSelection": "multiline",
-  // "editor.glyphMargin": false,
-  "debug.inlineValues": true,
-  "search.showLineNumbers": true,
-  "search.smartCase": true,
-  "workbench.list.automaticKeyboardNavigation": true,
-  "workbench.editor.enablePreviewFromQuickOpen": false,
-  "editor.quickSuggestions": {
-    "other": true,
-    "comments": true,
-    "strings": true
-  },
-  "editor.suggest.insertMode": "replace",
-  "editor.acceptSuggestionOnEnter": "smart",
-  "workbench.colorTheme": "Nord",
-  "terminal.integrated.windowsEnableConpty": false,
-
 }

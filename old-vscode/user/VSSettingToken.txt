@@ -1,0 +1,5 @@
+ext install code-settings-sync
+
+GitHub Token: b093f5a55784cd7c2b9e84955e6603d64044cb6e
+GitHub Gist: 06b71456a0f9fd68097b1bec3ec4260f
+GitHub Gist Type: Secret

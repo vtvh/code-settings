@@ -1,0 +1,38 @@
+{
+  "vim.normalModeKeyBindings": [
+    { "before": ["n"], "after": ["<down>"] },
+    { "before": ["e"], "after": ["<up>"] },
+    { "before": ["i"], "after": ["<right>"] }
+  ],
+  "vim.visualModeKeyBindings": [
+    { "before": ["n"], "after": ["<down>"] },
+    { "before": ["e"], "after": ["<up>"] },
+    { "before": ["i"], "after": ["<right>"] }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": ["K"], "after": ["N"] },
+    { "before": ["k"], "after": ["n"] },
+    { "before": ["L"], "after": ["I"] },
+    { "before": ["l"], "after": ["i"] },
+    { "before": ["J"], "after": ["E"] },
+    { "before": ["j"], "after": ["e"] },
+    { "before": ["N"], "after": ["J"] },
+    { "before": ["E"], "after": ["K"] },
+    { "before": ["I"], "after": ["L"] },
+    { "before": ["<leader>", "m"], "commands": ["bookmarks.toggle"] },
+    { "before": ["<leader>", "b"], "commands": ["bookmarks.list"] },
+    { "before": ["<leader>", "n"], "commands": [":nohl"] }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    { "before": ["K"], "after": ["N"] },
+    { "before": ["k"], "after": ["n"] },
+    { "before": ["L"], "after": ["I"] },
+    { "before": ["J"], "after": ["E"] },
+    { "before": ["j"], "after": ["e"] },
+    { "before": ["N"], "after": ["J"] },
+    { "before": ["I"], "after": ["L"] },
+    { "before": [">"], "commands": ["editor.action.indentLines"] },
+    { "before": ["<"], "commands": ["editor.action.outdentLines"] },
+    { "before": ["p"], "after": ["p", "g", "v", "y"] }
+  ]
+}
